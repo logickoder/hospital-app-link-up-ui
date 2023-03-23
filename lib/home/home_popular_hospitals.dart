@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../common/data/models/hospital.dart';
 import '../common/widgets/hospital_item.dart';
 import '../common/widgets/resources.dart';
+import '../routes.dart';
 
 class HomePopularHospitals extends StatelessWidget {
   final VoidCallback goToSearch;
@@ -29,15 +30,22 @@ class HomePopularHospitals extends StatelessWidget {
         ),
         const SizedBox(height: AppPadding.normal),
         SizedBox(
-          height: 330,
+          height: 340,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             separatorBuilder: (_, __) => const SizedBox(
               width: AppPadding.normal,
             ),
-            itemBuilder: (_, index) => HospitalItem(
-              hospital: testHospitals[index],
-              axis: Axis.vertical,
+            itemBuilder: (_, index) => InkWell(
+              onTap: () => Navigator.pushNamed(
+                context,
+                AppRoutes.hospitalDetails,
+                arguments: index,
+              ),
+              child: HospitalItem(
+                hospital: testHospitals[index],
+                axis: Axis.vertical,
+              ),
             ),
             itemCount: testHospitals.length,
           ),

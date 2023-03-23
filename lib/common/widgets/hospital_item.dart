@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../data/models/hospital.dart';
 import 'image.dart';
+import 'rating.dart';
 import 'resources.dart';
 
 class HospitalItem extends StatelessWidget {
@@ -57,6 +58,8 @@ class _HospitalDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final rating =
+        hospital.ratings.reduce((a, b) => a + b) / hospital.ratings.length;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,11 +79,22 @@ class _HospitalDetails extends StatelessWidget {
           '${hospital.openingTime.format(context)} - ${hospital.closingTime.format(context)}',
         ),
         const SizedBox(height: AppPadding.small),
-        Text(
-          '${hospital.ratings.length} Google reviews',
-          style: theme.textTheme.bodyMedium?.copyWith(
-            color: theme.colorScheme.primary,
-          ),
+        Row(
+          children: [
+            Rating(rating: rating),
+            const SizedBox(width: AppPadding.medium),
+            Flexible(
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  '${hospital.ratings.length} Google reviews',
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: theme.colorScheme.primary,
+                  ),
+                ),
+              ),
+            )
+          ],
         ),
       ],
     );

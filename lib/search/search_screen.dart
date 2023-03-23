@@ -4,6 +4,7 @@ import '../common/data/models/hospital.dart';
 import '../common/widgets/hospital_item.dart';
 import '../common/widgets/resources.dart';
 import '../common/widgets/search.dart';
+import '../routes.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -41,9 +42,16 @@ class SearchScreen extends StatelessWidget {
                   (_, index) {
                     return Padding(
                       padding: const EdgeInsets.only(bottom: AppPadding.normal),
-                      child: HospitalItem(
-                        hospital: testHospitals[index],
-                        axis: Axis.horizontal,
+                      child: InkWell(
+                        onTap: () => Navigator.pushNamed(
+                          context,
+                          AppRoutes.hospitalDetails,
+                          arguments: index,
+                        ),
+                        child: HospitalItem(
+                          hospital: testHospitals[index],
+                          axis: Axis.horizontal,
+                        ),
                       ),
                     );
                   },

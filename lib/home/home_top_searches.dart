@@ -62,9 +62,7 @@ class HomeTopSearches extends ConsumerWidget {
                   child: Text(
                     item.name.capitalize,
                     style: theme.textTheme.bodyLarge?.copyWith(
-                      color: item == search
-                          ? theme.colorScheme.primary
-                          : const Color(0xFF02050D),
+                      color: item == search ? theme.colorScheme.primary : null,
                     ),
                   ),
                 ),

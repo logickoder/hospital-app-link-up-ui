@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mboalab_advanced/home/home_screen.dart';
 
-import 'search/search_screen.dart';
+import '../search/search_screen.dart';
 
-class App extends ConsumerWidget {
-  const App({Key? key}) : super(key: key);
+class Dashboard extends ConsumerWidget {
+  const Dashboard({Key? key}) : super(key: key);
 
   static final _pageIndexProvider = StateProvider.autoDispose((ref) => 0);
 

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 class AppPadding {
   static const normal = 20.0;
   static const small = 8.0;
@@ -12,4 +14,8 @@ class AppSizes {
 
 class AppFonts {
   static const titleFamily = 'Euclid';
+}
+
+class AppColors {
+  static const text = Color(0xFF02050D);
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../data/models/doctor.dart';
 import 'image.dart';
+import 'rating.dart';
 import 'resources.dart';
 
 class DoctorItem extends StatelessWidget {
@@ -34,7 +35,13 @@ class DoctorItem extends StatelessWidget {
           const SizedBox(height: AppPadding.small),
           Text(doctor.type, maxLines: 1),
           const SizedBox(height: AppPadding.small),
-          Text(doctor.rating.toString().substring(0, 3)),
+          Row(
+            children: [
+              Text(doctor.rating.toStringAsFixed(1)),
+              const SizedBox(width: AppPadding.medium),
+              Rating(rating: doctor.rating),
+            ],
+          ),
         ],
       ),
     );
