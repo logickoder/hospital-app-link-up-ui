@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mboalab_advanced/home/home_screen.dart';
 
 class App extends ConsumerWidget {
   const App({Key? key}) : super(key: key);
@@ -15,9 +16,7 @@ class App extends ConsumerWidget {
       body: IndexedStack(
         index: index,
         children: [
-          Container(
-            color: Colors.red,
-          ),
+          const HomeScreen(),
           Container(
             color: Colors.blue,
           ),
