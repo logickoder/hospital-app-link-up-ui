@@ -5,7 +5,12 @@ import '../common/widgets/hospital_item.dart';
 import '../common/widgets/resources.dart';
 
 class HomePopularHospitals extends StatelessWidget {
-  const HomePopularHospitals({Key? key}) : super(key: key);
+  final VoidCallback goToSearch;
+
+  const HomePopularHospitals({
+    Key? key,
+    required this.goToSearch,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +24,12 @@ class HomePopularHospitals extends StatelessWidget {
           'Popular Hospitals',
           style: theme.textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.w500,
+            fontFamily: AppFonts.titleFamily,
           ),
         ),
         const SizedBox(height: AppPadding.normal),
         SizedBox(
-          height: 320,
+          height: 330,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             separatorBuilder: (_, __) => const SizedBox(
@@ -36,22 +42,21 @@ class HomePopularHospitals extends StatelessWidget {
             itemCount: testHospitals.length,
           ),
         ),
-        const SizedBox(height: AppPadding.large),
-        Row(
-          children: [
-            Text(
-              'View all hospitals',
-              style: theme.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.w700,
-                color: theme.colorScheme.primary,
-              ),
-            ),
-            Icon(
-              Icons.arrow_right_alt_outlined,
+        const SizedBox(height: AppPadding.small),
+        TextButton.icon(
+          onPressed: goToSearch,
+          style: TextButton.styleFrom(
+            foregroundColor: theme.colorScheme.primary,
+          ),
+          icon: Text(
+            'View all hospitals',
+            style: theme.textTheme.titleMedium?.copyWith(
+              fontWeight: FontWeight.w700,
               color: theme.colorScheme.primary,
             ),
-          ],
-        )
+          ),
+          label: const Icon(Icons.arrow_right_alt_outlined),
+        ),
       ],
     );
   }

@@ -16,7 +16,9 @@ class App extends ConsumerWidget {
       body: IndexedStack(
         index: index,
         children: [
-          const HomeScreen(),
+          HomeScreen(
+            goToSearch: () => ref.read(_pageIndexProvider.notifier).state = 1,
+          ),
           Container(
             color: Colors.blue,
           ),

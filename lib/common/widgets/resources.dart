@@ -9,3 +9,7 @@ class AppPadding {
 class AppSizes {
   static const vertScrollWidth = 200.0;
 }
+
+class AppFonts {
+  static const titleFamily = 'Euclid';
+}

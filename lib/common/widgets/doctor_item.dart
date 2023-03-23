@@ -26,6 +26,7 @@ class DoctorItem extends StatelessWidget {
             doctor.name,
             style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
+                  fontFamily: AppFonts.titleFamily,
                 ),
           ),
           const SizedBox(height: AppPadding.small),

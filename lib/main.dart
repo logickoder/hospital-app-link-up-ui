@@ -8,6 +8,7 @@ void main() => runApp(
         title: 'Mboalab Advanced',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          fontFamily: 'Helvetica',
           colorScheme: const ColorScheme.light(
             primary: Color(0xFF1B57F0),
           ),

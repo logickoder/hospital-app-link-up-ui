@@ -35,6 +35,7 @@ class HomeTopSearches extends ConsumerWidget {
           'Top searches',
           style: theme.textTheme.titleLarge?.copyWith(
             fontWeight: FontWeight.w500,
+            fontFamily: AppFonts.titleFamily,
           ),
         ),
         Row(
@@ -99,22 +100,21 @@ class HomeTopSearches extends ConsumerWidget {
             itemCount: _items.length,
           ),
         ),
-        const SizedBox(height: AppPadding.large),
-        Row(
-          children: [
-            Text(
-              'View ${search == _TopSearches.all ? search.name : 'all ${search.name}'}',
-              style: theme.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.w700,
-                color: theme.colorScheme.primary,
-              ),
-            ),
-            Icon(
-              Icons.arrow_right_alt_outlined,
+        const SizedBox(height: AppPadding.small),
+        TextButton.icon(
+          onPressed: () => {},
+          style: TextButton.styleFrom(
+            foregroundColor: theme.colorScheme.primary,
+          ),
+          icon: Text(
+            'View ${search == _TopSearches.all ? search.name : 'all ${search.name}'}',
+            style: theme.textTheme.titleMedium?.copyWith(
+              fontWeight: FontWeight.w700,
               color: theme.colorScheme.primary,
             ),
-          ],
-        )
+          ),
+          label: const Icon(Icons.arrow_right_alt_outlined),
+        ),
       ],
     );
   }

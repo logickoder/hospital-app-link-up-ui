@@ -29,7 +29,9 @@ class HospitalItem extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             HomePageImage(
-                image: hospital.image, size: AppSizes.vertScrollWidth),
+              image: hospital.image,
+              size: AppSizes.vertScrollWidth,
+            ),
             const SizedBox(height: AppPadding.medium),
             _HospitalDetails(hospital: hospital),
           ],
@@ -56,8 +58,10 @@ class _HospitalDetails extends StatelessWidget {
       children: [
         Text(
           hospital.name,
+          maxLines: 2,
           style: theme.textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.w600,
+            fontFamily: AppFonts.titleFamily,
           ),
         ),
         const SizedBox(height: AppPadding.small),
@@ -66,6 +70,7 @@ class _HospitalDetails extends StatelessWidget {
         Text(
           '${hospital.openingTime.format(context)} - ${hospital.closingTime.format(context)}',
         ),
+        const SizedBox(height: AppPadding.small),
         Text(
           '${hospital.ratings.length} Google reviews',
           style: theme.textTheme.bodyMedium?.copyWith(

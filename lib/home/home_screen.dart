@@ -8,7 +8,9 @@ import 'home_top_doctors.dart';
 import 'home_top_searches.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  final VoidCallback goToSearch;
+
+  const HomeScreen({Key? key, required this.goToSearch}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,17 +18,17 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.all(AppPadding.normal),
-          children: const [
-            HomeTitle(),
-            Padding(
+          children: [
+            const HomeTitle(),
+            const Padding(
               padding: EdgeInsets.symmetric(vertical: AppPadding.large),
               child: Search(hint: 'Search a hospital or health issue'),
             ),
-            HomeTopSearches(),
-            SizedBox(height: AppPadding.large),
-            HomePopularHospitals(),
-            SizedBox(height: AppPadding.large),
-            HomeTopDoctors(),
+            const HomeTopSearches(),
+            const SizedBox(height: AppPadding.large),
+            HomePopularHospitals(goToSearch: goToSearch),
+            const SizedBox(height: AppPadding.large),
+            const HomeTopDoctors(),
           ],
         ),
       ),

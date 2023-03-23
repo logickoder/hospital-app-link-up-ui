@@ -28,6 +28,7 @@ class HomeTitle extends StatelessWidget {
               '${testUser.name},',
               style: theme.textTheme.headlineSmall?.copyWith(
                 fontWeight: FontWeight.w500,
+                fontFamily: AppFonts.titleFamily,
               ),
             ),
             const SizedBox(height: AppPadding.small),
