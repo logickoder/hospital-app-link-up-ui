@@ -18,7 +18,7 @@ class HomePageImage extends StatelessWidget {
       child: CachedNetworkImage(
         imageUrl: image,
         height: size,
-        width: double.infinity,
+        width: size,
         fit: BoxFit.cover,
       ),
     );

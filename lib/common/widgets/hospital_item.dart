@@ -19,7 +19,12 @@ class HospitalItem extends StatelessWidget {
     if (axis == Axis.horizontal) {
       return Row(
         children: [
-          _HospitalDetails(hospital: hospital),
+          HomePageImage(
+            image: hospital.image,
+            size: 110,
+          ),
+          const SizedBox(width: AppPadding.medium),
+          Expanded(child: _HospitalDetails(hospital: hospital)),
         ],
       );
     } else {

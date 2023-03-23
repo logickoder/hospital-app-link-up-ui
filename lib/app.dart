@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mboalab_advanced/home/home_screen.dart';
 
+import 'search/search_screen.dart';
+
 class App extends ConsumerWidget {
   const App({Key? key}) : super(key: key);
 
@@ -19,9 +21,7 @@ class App extends ConsumerWidget {
           HomeScreen(
             goToSearch: () => ref.read(_pageIndexProvider.notifier).state = 1,
           ),
-          Container(
-            color: Colors.blue,
-          ),
+          const SearchScreen(),
           Container(
             color: Colors.green,
           ),
