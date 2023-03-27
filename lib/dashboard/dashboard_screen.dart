@@ -4,8 +4,8 @@ import 'package:mboalab_advanced/home/home_screen.dart';
 
 import '../search/search_screen.dart';
 
-class Dashboard extends ConsumerWidget {
-  const Dashboard({Key? key}) : super(key: key);
+class DashboardScreen extends ConsumerWidget {
+  const DashboardScreen({Key? key}) : super(key: key);
 
   static final _pageIndexProvider = StateProvider.autoDispose((ref) => 0);
 

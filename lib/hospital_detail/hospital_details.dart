@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 import '../common/data/models/hospital.dart';
 import '../common/widgets/button.dart';
 import '../common/widgets/resources.dart';
+import '../routes.dart';
 
 class HospitalDetails extends StatelessWidget {
   HospitalDetails({Key? key, required this.hospital}) : super(key: key);
@@ -116,7 +117,10 @@ class HospitalDetails extends StatelessWidget {
             const SizedBox(height: AppPadding.extraLarge),
             Button(
               text: 'Book an appointment',
-              onClick: () => {},
+              onClick: () => Navigator.pushNamed(
+                context,
+                AppRoutes.createAppointment,
+              ),
             ),
           ],
         ),
