@@ -31,47 +31,44 @@ class HomeTopSearches extends ConsumerWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Top searches',
-          style: theme.textTheme.titleLarge?.copyWith(
-            fontWeight: FontWeight.w500,
-            fontFamily: AppFonts.titleFamily,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: AppPadding.normal),
+          child: Text(
+            'Top searches',
+            style: theme.textTheme.titleLarge?.copyWith(
+              fontWeight: FontWeight.w500,
+              fontFamily: AppFonts.titleFamily,
+            ),
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: _TopSearches.values.map((item) {
-            return InkWell(
-              onTap: () => ref.read(_topSearch.notifier).state = item,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: AppPadding.extraLarge,
-                  horizontal: AppPadding.small,
-                ),
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border(
-                      bottom: item == search
-                          ? BorderSide(
-                              color: theme.colorScheme.primary,
-                              width: 2,
-                            )
-                          : BorderSide.none,
-                    ),
-                  ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppPadding.normal,
+            vertical: AppPadding.large,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: _TopSearches.values.map((item) {
+              return InkWell(
+                onTap: () => ref.read(_topSearch.notifier).state = item,
+                child: Padding(
+                  padding: const EdgeInsets.all(AppPadding.small),
                   child: Text(
                     item.name.capitalize,
                     style: theme.textTheme.bodyLarge?.copyWith(
                       color: item == search ? theme.colorScheme.primary : null,
+                      decoration:
+                          item == search ? TextDecoration.underline : null,
                     ),
                   ),
                 ),
-              ),
-            );
-          }).toList(),
+              );
+            }).toList(),
+          ),
         ),
-        SizedBox(
+        Container(
           height: 80,
+          padding: const EdgeInsets.only(left: AppPadding.normal),
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             separatorBuilder: (_, __) => const SizedBox(
@@ -99,19 +96,22 @@ class HomeTopSearches extends ConsumerWidget {
           ),
         ),
         const SizedBox(height: AppPadding.small),
-        TextButton.icon(
-          onPressed: () => {},
-          style: TextButton.styleFrom(
-            foregroundColor: theme.colorScheme.primary,
-          ),
-          icon: Text(
-            'View ${search == _TopSearches.all ? search.name : 'all ${search.name}'}',
-            style: theme.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w700,
-              color: theme.colorScheme.primary,
+        Padding(
+          padding: const EdgeInsets.only(left: AppPadding.normal),
+          child: TextButton.icon(
+            onPressed: () => {},
+            style: TextButton.styleFrom(
+              foregroundColor: theme.colorScheme.primary,
             ),
+            icon: Text(
+              'View ${search == _TopSearches.all ? search.name : 'all ${search.name}'}',
+              style: theme.textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w700,
+                color: theme.colorScheme.primary,
+              ),
+            ),
+            label: const Icon(Icons.arrow_right_alt_outlined),
           ),
-          label: const Icon(Icons.arrow_right_alt_outlined),
         ),
       ],
     );

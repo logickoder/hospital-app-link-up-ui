@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../common/widgets/resources.dart';
 import '../common/widgets/search.dart';
+import '../common/widgets/title_card.dart';
 import 'home_popular_hospitals.dart';
-import 'home_title.dart';
 import 'home_top_doctors.dart';
 import 'home_top_searches.dart';
 
@@ -14,22 +15,44 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.all(AppPadding.normal),
-          children: [
-            const HomeTitle(),
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: AppPadding.large),
-              child: Search(hint: 'Search a hospital or health issue'),
-            ),
-            const HomeTopSearches(),
-            const SizedBox(height: AppPadding.large),
-            HomePopularHospitals(goToSearch: goToSearch),
-            const SizedBox(height: AppPadding.large),
-            const HomeTopDoctors(),
-          ],
+    const spacing = SliverToBoxAdapter(
+      child: SizedBox(height: AppPadding.large),
+    );
+
+    return AnnotatedRegion(
+      value: SystemUiOverlayStyle(
+        statusBarColor: Theme.of(context).scaffoldBackgroundColor,
+      ),
+      child: Scaffold(
+        body: SafeArea(
+          child: CustomScrollView(
+            slivers: [
+              spacing,
+              const SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: AppPadding.normal),
+                  child: TitleCard(),
+                ),
+              ),
+              spacing,
+              const SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: AppPadding.normal),
+                  child: Search(hint: 'Search a hospital or health issue'),
+                ),
+              ),
+              spacing,
+              const SliverToBoxAdapter(child: HomeTopSearches()),
+              spacing,
+              SliverToBoxAdapter(
+                child: HomePopularHospitals(goToSearch: goToSearch),
+              ),
+              spacing,
+              const SliverToBoxAdapter(
+                child: HomeTopDoctors(),
+              ),
+            ],
+          ),
         ),
       ),
     );

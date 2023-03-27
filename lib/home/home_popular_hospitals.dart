@@ -21,16 +21,20 @@ class HomePopularHospitals extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Popular Hospitals',
-          style: theme.textTheme.titleLarge?.copyWith(
-            fontWeight: FontWeight.w500,
-            fontFamily: AppFonts.titleFamily,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: AppPadding.normal),
+          child: Text(
+            'Popular Hospitals',
+            style: theme.textTheme.titleLarge?.copyWith(
+              fontWeight: FontWeight.w500,
+              fontFamily: AppFonts.titleFamily,
+            ),
           ),
         ),
         const SizedBox(height: AppPadding.normal),
-        SizedBox(
+        Container(
           height: 340,
+          padding: const EdgeInsets.only(left: AppPadding.normal),
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             separatorBuilder: (_, __) => const SizedBox(
@@ -42,28 +46,31 @@ class HomePopularHospitals extends StatelessWidget {
                 AppRoutes.hospitalDetails,
                 arguments: index,
               ),
-              child: HospitalItem(
-                hospital: testHospitals[index],
-                axis: Axis.vertical,
-              ),
-            ),
+                  child: HospitalItem(
+                    hospital: testHospitals[index],
+                    axis: Axis.vertical,
+                  ),
+                ),
             itemCount: testHospitals.length,
           ),
         ),
         const SizedBox(height: AppPadding.small),
-        TextButton.icon(
-          onPressed: goToSearch,
-          style: TextButton.styleFrom(
-            foregroundColor: theme.colorScheme.primary,
-          ),
-          icon: Text(
-            'View all hospitals',
-            style: theme.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w700,
-              color: theme.colorScheme.primary,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: AppPadding.normal),
+          child: TextButton.icon(
+            onPressed: goToSearch,
+            style: TextButton.styleFrom(
+              foregroundColor: theme.colorScheme.primary,
             ),
+            icon: Text(
+              'View all hospitals',
+              style: theme.textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w700,
+                color: theme.colorScheme.primary,
+              ),
+            ),
+            label: const Icon(Icons.arrow_right_alt_outlined),
           ),
-          label: const Icon(Icons.arrow_right_alt_outlined),
         ),
       ],
     );
