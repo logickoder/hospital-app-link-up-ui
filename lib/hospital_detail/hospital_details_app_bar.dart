@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../common/data/models/hospital.dart';
@@ -18,6 +19,9 @@ class HospitalDetailsAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       pinned: true,
+      systemOverlayStyle: const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+      ),
       expandedHeight: MediaQuery.of(context).size.height * .45,
       automaticallyImplyLeading: false,
       flexibleSpace: FlexibleSpaceBar(

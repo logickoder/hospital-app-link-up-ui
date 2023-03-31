@@ -69,27 +69,31 @@ class HomeTopSearches extends ConsumerWidget {
         Container(
           height: 80,
           padding: const EdgeInsets.only(left: AppPadding.normal),
-          child: ListView.separated(
+          child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            separatorBuilder: (_, __) => const SizedBox(
-              width: AppPadding.extraLarge,
-            ),
             itemBuilder: (_, index) {
               final item = _items[index];
-              return Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(AppPadding.medium),
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color(0xFF052B8E),
+              return Padding(
+                padding: EdgeInsets.only(
+                  right: index < _items.length - 1
+                      ? AppPadding.extraLarge
+                      : AppPadding.normal,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(AppPadding.medium),
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color(0xFF052B8E),
+                      ),
+                      child: SvgPicture.asset('assets/icons/$item.svg'),
                     ),
-                    child: SvgPicture.asset('assets/icons/$item.svg'),
-                  ),
-                  const SizedBox(height: AppPadding.small),
-                  Text(item.capitalize)
-                ],
+                    const SizedBox(height: AppPadding.small),
+                    Text(item.capitalize)
+                  ],
+                ),
               );
             },
             itemCount: _items.length,

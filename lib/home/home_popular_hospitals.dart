@@ -35,22 +35,22 @@ class HomePopularHospitals extends StatelessWidget {
         Container(
           height: 340,
           padding: const EdgeInsets.only(left: AppPadding.normal),
-          child: ListView.separated(
+          child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            separatorBuilder: (_, __) => const SizedBox(
-              width: AppPadding.normal,
-            ),
             itemBuilder: (_, index) => InkWell(
               onTap: () => Navigator.pushNamed(
                 context,
                 AppRoutes.hospitalDetails,
                 arguments: index,
               ),
-                  child: HospitalItem(
-                    hospital: testHospitals[index],
-                    axis: Axis.vertical,
-                  ),
+              child: Padding(
+                padding: const EdgeInsets.only(right: AppPadding.normal),
+                child: HospitalItem(
+                  hospital: testHospitals[index],
+                  axis: Axis.vertical,
                 ),
+              ),
+            ),
             itemCount: testHospitals.length,
           ),
         ),
