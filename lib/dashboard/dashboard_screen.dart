@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mboalab_advanced/home/home_screen.dart';
 
+import '../home/home_screen.dart';
 import '../search/search_screen.dart';
 
 class DashboardScreen extends ConsumerWidget {

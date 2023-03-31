@@ -1,4 +1,4 @@
-# mboalab_advanced
+# hospital_link_up_ui
 
 A simple app to link-up hospitals
 
