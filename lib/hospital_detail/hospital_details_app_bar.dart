@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../common/data/models/hospital.dart';
-import '../common/widgets/resources.dart';
+import '../common/resources.dart';
 import 'hospital_details_title.dart';
 
 class HospitalDetailsAppBar extends StatelessWidget {

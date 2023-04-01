@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../data/models/hospital.dart';
+import '../resources.dart';
 import 'image.dart';
 import 'rating.dart';
-import 'resources.dart';
 
 class HospitalItem extends StatelessWidget {
   final Hospital hospital;

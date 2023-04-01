@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../common/resources.dart';
 import '../common/utils/extensions.dart';
-import '../common/widgets/resources.dart';
 
 enum _TopSearches { all, specialities, procedures, conditions }
 

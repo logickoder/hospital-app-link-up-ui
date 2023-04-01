@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'common/widgets/resources.dart';
-import 'routes.dart';
+import 'common/resources.dart';
+import 'common/routes.dart';
 
 void main() => runApp(const MyApp());
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
       child: MaterialApp(
-        title: 'Mboalab Advanced',
+        title: 'Hospital Link Up',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           fontFamily: 'Helvetica',

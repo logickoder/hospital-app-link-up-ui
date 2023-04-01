@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../data/models/doctor.dart';
+import '../resources.dart';
 import 'image.dart';
 import 'rating.dart';
-import 'resources.dart';
 
 class DoctorItem extends StatelessWidget {
   final Doctor doctor;

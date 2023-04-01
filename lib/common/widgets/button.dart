@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'resources.dart';
+import '../resources.dart';
 
 class Button extends StatelessWidget {
   const Button({

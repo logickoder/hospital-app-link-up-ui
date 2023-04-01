@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../common/widgets/resources.dart';
+import '../common/resources.dart';
 import '../common/widgets/search.dart';
 import '../common/widgets/title_card.dart';
 import 'home_popular_hospitals.dart';

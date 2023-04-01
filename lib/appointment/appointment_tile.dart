@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../common/widgets/resources.dart';
+import '../common/resources.dart';
 
 class AppointmentTile extends StatelessWidget {
   const AppointmentTile({

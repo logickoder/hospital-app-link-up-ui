@@ -1,8 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:hospital_link_up_ui/common/routes.dart';
 
 import '../data/models/user.dart';
-import 'resources.dart';
+import '../resources.dart';
 
 class TitleCard extends StatelessWidget {
   const TitleCard({Key? key}) : super(key: key);
@@ -43,7 +44,9 @@ class TitleCard extends StatelessWidget {
           children: [
             IconButton(
               icon: const Icon(Icons.notifications_outlined),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.notifications);
+              },
             ),
             Positioned(
               top: 10.0,
