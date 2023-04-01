@@ -35,6 +35,7 @@ class HomePopularHospitals extends StatelessWidget {
         SizedBox(
           height: 340,
           child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             itemBuilder: (_, index) => InkWell(
               onTap: () => Navigator.pushNamed(
@@ -46,13 +47,13 @@ class HomePopularHospitals extends StatelessWidget {
                 padding: EdgeInsets.only(
                   right: AppPadding.normal,
                   left: index == 0 ? AppPadding.normal : 0,
+                    ),
+                    child: HospitalItem(
+                      hospital: testHospitals[index],
+                      axis: Axis.vertical,
+                    ),
+                  ),
                 ),
-                child: HospitalItem(
-                  hospital: testHospitals[index],
-                  axis: Axis.vertical,
-                ),
-              ),
-            ),
             itemCount: testHospitals.length,
           ),
         ),

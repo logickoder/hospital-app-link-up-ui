@@ -69,6 +69,7 @@ class HomeTopSearches extends ConsumerWidget {
         SizedBox(
           height: 80,
           child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             itemBuilder: (_, index) {
               final item = _items[index];

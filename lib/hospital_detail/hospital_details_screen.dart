@@ -13,6 +13,7 @@ class HospitalDetailsScreen extends StatelessWidget {
         testHospitals[ModalRoute.of(context)?.settings.arguments as int];
     return Scaffold(
       body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
         slivers: [
           HospitalDetailsAppBar(hospital: hospital),
           SliverToBoxAdapter(child: HospitalDetails(hospital: hospital)),

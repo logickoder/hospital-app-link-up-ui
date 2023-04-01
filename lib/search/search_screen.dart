@@ -16,6 +16,7 @@ class SearchScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: AppPadding.normal),
           child: CustomScrollView(
+            physics: const BouncingScrollPhysics(),
             slivers: [
               const SliverToBoxAdapter(
                 child: SizedBox(height: AppPadding.medium),
@@ -27,7 +28,7 @@ class SearchScreen extends StatelessWidget {
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                           fontWeight: FontWeight.w500,
                           fontFamily: AppFonts.titleFamily,
-                        ),
+                    ),
                   ),
                 ),
               ),
@@ -39,7 +40,7 @@ class SearchScreen extends StatelessWidget {
               ),
               SliverList(
                 delegate: SliverChildBuilderDelegate(
-                  (_, index) {
+                      (_, index) {
                     return Padding(
                       padding: const EdgeInsets.only(bottom: AppPadding.normal),
                       child: InkWell(

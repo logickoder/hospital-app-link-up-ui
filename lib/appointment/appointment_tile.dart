@@ -113,6 +113,7 @@ class AppointmentTiles extends ConsumerWidget {
       height: 170,
       child: ListView.builder(
         itemExtent: 200,
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemCount: _tiles.length,
         itemBuilder: (_, index) => Padding(

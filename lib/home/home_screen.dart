@@ -26,6 +26,7 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         body: SafeArea(
           child: CustomScrollView(
+            physics: const BouncingScrollPhysics(),
             slivers: [
               spacing,
               const SliverToBoxAdapter(

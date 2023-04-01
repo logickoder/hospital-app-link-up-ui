@@ -19,6 +19,7 @@ class HospitalDetailsAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       pinned: true,
+      stretch: true,
       systemOverlayStyle: const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
       ),

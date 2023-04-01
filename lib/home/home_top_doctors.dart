@@ -29,6 +29,7 @@ class HomeTopDoctors extends StatelessWidget {
         SizedBox(
           height: 320,
           child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             itemBuilder: (_, index) => Padding(
               padding: EdgeInsets.only(
