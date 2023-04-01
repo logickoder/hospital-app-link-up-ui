@@ -32,9 +32,8 @@ class HomePopularHospitals extends StatelessWidget {
           ),
         ),
         const SizedBox(height: AppPadding.normal),
-        Container(
+        SizedBox(
           height: 340,
-          padding: const EdgeInsets.only(left: AppPadding.normal),
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemBuilder: (_, index) => InkWell(
@@ -44,7 +43,10 @@ class HomePopularHospitals extends StatelessWidget {
                 arguments: index,
               ),
               child: Padding(
-                padding: const EdgeInsets.only(right: AppPadding.normal),
+                padding: EdgeInsets.only(
+                  right: AppPadding.normal,
+                  left: index == 0 ? AppPadding.normal : 0,
+                ),
                 child: HospitalItem(
                   hospital: testHospitals[index],
                   axis: Axis.vertical,

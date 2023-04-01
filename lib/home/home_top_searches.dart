@@ -66,9 +66,8 @@ class HomeTopSearches extends ConsumerWidget {
             }).toList(),
           ),
         ),
-        Container(
+        SizedBox(
           height: 80,
-          padding: const EdgeInsets.only(left: AppPadding.normal),
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemBuilder: (_, index) {
@@ -78,6 +77,7 @@ class HomeTopSearches extends ConsumerWidget {
                   right: index < _items.length - 1
                       ? AppPadding.extraLarge
                       : AppPadding.normal,
+                  left: index == 0 ? AppPadding.normal : 0,
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,

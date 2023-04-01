@@ -26,13 +26,15 @@ class HomeTopDoctors extends StatelessWidget {
           ),
         ),
         const SizedBox(height: AppPadding.normal),
-        Container(
+        SizedBox(
           height: 320,
-          padding: const EdgeInsets.only(left: AppPadding.normal),
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemBuilder: (_, index) => Padding(
-              padding: const EdgeInsets.only(right: AppPadding.normal),
+              padding: EdgeInsets.only(
+                right: AppPadding.normal,
+                left: index == 0 ? AppPadding.normal : 0,
+              ),
               child: DoctorItem(
                 doctor: testDoctors[index],
               ),
