@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../appointment/appointments_screen.dart';
 import '../home/home_screen.dart';
 import '../search/search_screen.dart';
 
@@ -22,6 +23,10 @@ class DashboardScreen extends ConsumerWidget {
             goToSearch: () => ref.read(_pageIndexProvider.notifier).state = 1,
           ),
           const SearchScreen(),
+          AppointmentsScreen(
+            bookAppointment: () =>
+                ref.read(_pageIndexProvider.notifier).state = 1,
+          ),
           Container(
             color: Colors.green,
           ),
@@ -43,6 +48,10 @@ class DashboardScreen extends ConsumerWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_today_outlined),
             label: 'Appointment',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.email_outlined),
+            label: 'Chat',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_2_outlined),
