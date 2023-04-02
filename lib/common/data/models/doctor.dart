@@ -15,7 +15,7 @@ class Doctor {
 
 final testDoctors = [
   Doctor(
-    name: 'Dr. Jane . C . Nelson ',
+    name: 'Dr. Jane .C. Nelson ',
     hospital: 'National Hospital Abuja, Nigeria.',
     type: 'Cardiologists',
     image:

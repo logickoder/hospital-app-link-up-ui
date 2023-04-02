@@ -17,6 +17,7 @@ class HospitalDetailsAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return SliverAppBar(
       pinned: true,
       stretch: true,
@@ -42,7 +43,7 @@ class HospitalDetailsAppBar extends StatelessWidget {
                   children: [
                     Container(
                       decoration: ShapeDecoration(
-                        color: const Color(0x91F6F9FF),
+                        color: theme.colorScheme.onPrimary.withOpacity(0.57),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -54,7 +55,7 @@ class HospitalDetailsAppBar extends StatelessWidget {
                     ),
                     Container(
                       decoration: ShapeDecoration(
-                        color: const Color(0x91F6F9FF),
+                        color: theme.colorScheme.onPrimary.withOpacity(0.57),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'common/resources.dart';
 import 'common/routes.dart';
 
 void main() => runApp(const MyApp());
@@ -17,16 +16,23 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           fontFamily: 'Helvetica',
-          colorScheme: const ColorScheme.light(
-            primary: Color(0xFF1B57F0),
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color(0xFF1B57F0),
+            onPrimary: const Color(0xFFF6F9FF),
           ),
-          textTheme: Theme.of(context).textTheme.apply(
-                bodyColor: AppColors.text,
-                displayColor: AppColors.text,
-              ),
+          textTheme: textTheme(context),
         ),
         routes: AppRoutes.routes,
       ),
     );
+  }
+
+  TextTheme textTheme(BuildContext context) {
+    const color = Color(0xFF02050D);
+    return Theme.of(context).textTheme.apply(
+          bodyColor: color,
+          displayColor: color,
+        );
   }
 }

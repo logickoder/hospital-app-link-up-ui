@@ -16,8 +16,8 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
+      child: FilledButton(
+        style: FilledButton.styleFrom(
           padding: const EdgeInsets.all(AppPadding.normal),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           textStyle: Theme.of(context).textTheme.bodyLarge,
