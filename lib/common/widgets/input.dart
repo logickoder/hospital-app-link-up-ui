@@ -128,6 +128,7 @@ class _InputState extends ConsumerState<Input> {
       child: Text(
         widget.label!,
         style: labelStyle,
+        maxLines: 1,
       ),
     );
   }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../common/resources.dart';
+import '../common/routes.dart';
+import '../common/widgets/button.dart';
 import '../common/widgets/input.dart';
 import '../common/widgets/top_bar.dart';
 import 'appointment_tile.dart';
@@ -10,15 +12,17 @@ class CreateAppointmentScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
       appBar: const TopBar(title: 'APPOINTMENT'),
       body: ListView(
-        shrinkWrap: true,
+        physics: const BouncingScrollPhysics(),
         children: [
           AppointmentTiles(),
           Padding(
             padding: const EdgeInsets.all(AppPadding.normal),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: const [
@@ -36,7 +40,71 @@ class CreateAppointmentScreen extends StatelessWidget {
                       ),
                     ),
                   ],
-                )
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: AppPadding.normal,
+                  ),
+                  child: Text(
+                    'Add Payment Information',
+                    style: theme.textTheme.bodyLarge?.copyWith(
+                      fontFamily: AppFonts.titleFamily,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                const Input(label: "Card Holder's Name"),
+                const Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: AppPadding.normal,
+                  ),
+                  child: Input(label: "Card Number"),
+                ),
+                Row(
+                  children: const [
+                    Expanded(
+                      child: Input(
+                        label: 'Card Expiry Date',
+                        trailing: Icon(Icons.calendar_month_outlined),
+                      ),
+                    ),
+                    SizedBox(width: AppPadding.medium),
+                    Expanded(child: Input(label: 'CVV')),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: AppPadding.extraLarge,
+                  ),
+                  child: Button(
+                    text: 'Proceed',
+                    onClick: () => Navigator.pushNamed(
+                      context,
+                      AppRoutes.createAppointment,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  child: RichText(
+                    text: TextSpan(
+                      text: 'By adding payment information, you agree to the',
+                      style: theme.textTheme.bodySmall,
+                      children: [
+                        const TextSpan(text: '\n'),
+                        TextSpan(
+                          text: 'Terms & Conditions',
+                          style: TextStyle(
+                            color: theme.colorScheme.primary,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ],
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(height: AppPadding.extraLarge),
               ],
             ),
           ),
