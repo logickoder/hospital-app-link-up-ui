@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../appointment/appointments_screen.dart';
+import '../chat/chat_list_screen.dart';
 import '../home/home_screen.dart';
 import '../search/search_screen.dart';
 
@@ -27,9 +28,7 @@ class DashboardScreen extends ConsumerWidget {
             bookAppointment: () =>
                 ref.read(_pageIndexProvider.notifier).state = 1,
           ),
-          Container(
-            color: Colors.green,
-          ),
+          const ChatListScreen(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

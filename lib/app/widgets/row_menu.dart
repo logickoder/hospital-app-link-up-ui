@@ -7,13 +7,13 @@ import '../utils/extensions.dart';
 class RowMenu extends ConsumerStatefulWidget {
   final String? initial;
   final List<String> items;
-  final ValueChanged<String> onItemChanged;
+  final ValueChanged<String>? onItemChanged;
 
   const RowMenu({
     Key? key,
     this.initial,
     required this.items,
-    required this.onItemChanged,
+    this.onItemChanged,
   }) : super(key: key);
 
   @override
@@ -36,7 +36,7 @@ class _RowMenuState extends ConsumerState<RowMenu> {
         return InkWell(
           onTap: () {
             ref.read(_item.notifier).state = item;
-            widget.onItemChanged(item);
+            widget.onItemChanged?.call(item);
           },
           child: Padding(
             padding: const EdgeInsets.all(AppPadding.small),
