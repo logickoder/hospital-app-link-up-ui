@@ -4,28 +4,31 @@ import 'package:flutter_svg/svg.dart';
 
 import '../app/resources.dart';
 import '../app/utils/extensions.dart';
+import '../app/widgets/row_menu.dart';
 
-enum _TopSearches { all, specialities, procedures, conditions }
+final _items = [
+  'cardiology',
+  'optometry',
+  'dentistry',
+  'oncology',
+  'neurology'
+];
 
-class HomeTopSearches extends ConsumerWidget {
+final _topSearches = [
+  'all',
+  'specialities',
+  'procedures',
+  'conditions',
+];
+
+final _topSearch = StateProvider.autoDispose((ref) => _topSearches.first);
+
+class HomeTopSearches extends StatelessWidget {
   const HomeTopSearches({Key? key}) : super(key: key);
 
-  static final _topSearch = StateProvider.autoDispose(
-    (ref) => _TopSearches.all,
-  );
-
-  static final _items = [
-    'cardiology',
-    'optometry',
-    'dentistry',
-    'oncology',
-    'neurology'
-  ];
-
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final search = ref.watch(_topSearch);
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -42,28 +45,17 @@ class HomeTopSearches extends ConsumerWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppPadding.normal,
-            vertical: AppPadding.large,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: _TopSearches.values.map((item) {
-              return InkWell(
-                onTap: () => ref.read(_topSearch.notifier).state = item,
-                child: Padding(
-                  padding: const EdgeInsets.all(AppPadding.small),
-                  child: Text(
-                    item.name.capitalize,
-                    style: theme.textTheme.bodyLarge?.copyWith(
-                      color: item == search ? theme.colorScheme.primary : null,
-                      decoration:
-                          item == search ? TextDecoration.underline : null,
-                    ),
-                  ),
-                ),
+          padding: const EdgeInsets.all(AppPadding.normal),
+          child: Consumer(
+            builder: (_, ref, __) {
+              return RowMenu(
+                initial: ref.read(_topSearch),
+                items: _topSearches,
+                onItemChanged: (String value) {
+                  ref.read(_topSearch.notifier).state = value;
+                },
               );
-            }).toList(),
+            },
           ),
         ),
         SizedBox(
@@ -108,12 +100,17 @@ class HomeTopSearches extends ConsumerWidget {
             style: TextButton.styleFrom(
               foregroundColor: theme.colorScheme.primary,
             ),
-            icon: Text(
-              'View ${search == _TopSearches.all ? search.name : 'all ${search.name}'}',
-              style: theme.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.w700,
-                color: theme.colorScheme.primary,
-              ),
+            icon: Consumer(
+              builder: (_, ref, __) {
+                final search = ref.watch(_topSearch);
+                return Text(
+                  'View ${search == _topSearches.first ? search : 'all $search'}',
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.w700,
+                    color: theme.colorScheme.primary,
+                  ),
+                );
+              },
             ),
             label: const Icon(Icons.arrow_right_alt_outlined),
           ),
