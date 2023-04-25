@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:hospital_link_up_ui/common/routes.dart';
 
 import '../data/models/user.dart';
 import '../resources.dart';
+import '../routes.dart';
 
 class TitleCard extends StatelessWidget {
   const TitleCard({Key? key}) : super(key: key);

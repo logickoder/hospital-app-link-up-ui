@@ -2,10 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../common/data/models/appointment.dart';
-import '../common/data/models/doctor.dart';
-import '../common/data/models/hospital.dart';
-import '../common/resources.dart';
+import '../app/data/models/appointment.dart';
+import '../app/data/models/doctor.dart';
+import '../app/data/models/hospital.dart';
+import '../app/resources.dart';
 
 class AppointmentItem extends StatelessWidget {
   const AppointmentItem(this.appointment, {Key? key}) : super(key: key);

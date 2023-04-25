@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../common/data/models/doctor.dart';
-import '../common/resources.dart';
-import '../common/widgets/doctor_item.dart';
+import '../app/data/models/doctor.dart';
+import '../app/resources.dart';
+import '../app/widgets/doctor_item.dart';
 
 class HomeTopDoctors extends StatelessWidget {
   const HomeTopDoctors({Key? key}) : super(key: key);

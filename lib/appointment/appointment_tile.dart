@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
-import '../common/resources.dart';
+import '../app/resources.dart';
 
 class AppointmentTileModel {
   AppointmentTileModel({

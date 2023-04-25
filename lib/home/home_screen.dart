@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../common/resources.dart';
-import '../common/widgets/search.dart';
-import '../common/widgets/title_card.dart';
+import '../app/resources.dart';
+import '../app/widgets/search.dart';
+import '../app/widgets/title_card.dart';
 import 'home_popular_hospitals.dart';
 import 'home_top_doctors.dart';
 import 'home_top_searches.dart';

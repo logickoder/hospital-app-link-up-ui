@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../common/data/models/appointment.dart';
-import '../common/resources.dart';
-import '../common/widgets/button.dart';
-import '../common/widgets/top_bar.dart';
+import '../app/data/models/appointment.dart';
+import '../app/resources.dart';
+import '../app/widgets/button.dart';
+import '../app/widgets/top_bar.dart';
 import 'appointment_item.dart';
 import 'appointment_tile.dart';
 

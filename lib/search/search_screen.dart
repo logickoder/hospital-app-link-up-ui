@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../common/data/models/hospital.dart';
-import '../common/resources.dart';
-import '../common/routes.dart';
-import '../common/widgets/hospital_item.dart';
-import '../common/widgets/search.dart';
+import '../app/data/models/hospital.dart';
+import '../app/resources.dart';
+import '../app/routes.dart';
+import '../app/widgets/hospital_item.dart';
+import '../app/widgets/search.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);

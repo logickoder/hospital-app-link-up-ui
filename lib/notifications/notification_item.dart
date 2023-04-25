@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../common/data/models/notification.dart' as model;
-import '../common/resources.dart';
+import '../app/data/models/notification.dart' as model;
+import '../app/resources.dart';
 
 class NotificationItem extends StatelessWidget {
   const NotificationItem(this.notification, {Key? key}) : super(key: key);

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../common/resources.dart';
-import '../common/routes.dart';
-import '../common/widgets/button.dart';
-import '../common/widgets/input.dart';
-import '../common/widgets/top_bar.dart';
+import '../app/resources.dart';
+import '../app/routes.dart';
+import '../app/widgets/button.dart';
+import '../app/widgets/input.dart';
+import '../app/widgets/top_bar.dart';
 import 'appointment_tile.dart';
 
 class CreateAppointmentScreen extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../common/data/models/notification.dart';
-import '../common/resources.dart';
-import '../common/widgets/top_bar.dart';
+import '../app/data/models/notification.dart';
+import '../app/resources.dart';
+import '../app/widgets/top_bar.dart';
 import 'notification_item.dart';
 
 class NotificationsScreen extends StatelessWidget {

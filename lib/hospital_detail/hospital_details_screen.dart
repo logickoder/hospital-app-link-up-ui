@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../common/data/models/hospital.dart';
+import '../app/data/models/hospital.dart';
 import 'hospital_details.dart';
 import 'hospital_details_app_bar.dart';
 

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import '../common/data/models/hospital.dart';
-import '../common/resources.dart';
-import '../common/routes.dart';
-import '../common/widgets/button.dart';
+import '../app/data/models/hospital.dart';
+import '../app/resources.dart';
+import '../app/routes.dart';
+import '../app/widgets/button.dart';
 
 class HospitalDetails extends StatelessWidget {
   HospitalDetails({Key? key, required this.hospital}) : super(key: key);

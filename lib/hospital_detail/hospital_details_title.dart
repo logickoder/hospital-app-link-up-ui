@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../common/resources.dart';
-import '../common/widgets/rating.dart';
+import '../app/resources.dart';
+import '../app/widgets/rating.dart';
 
 class HospitalDetailsTitle extends StatelessWidget {
   const HospitalDetailsTitle(

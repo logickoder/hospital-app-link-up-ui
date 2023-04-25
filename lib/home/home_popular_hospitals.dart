@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../common/data/models/hospital.dart';
-import '../common/resources.dart';
-import '../common/routes.dart';
-import '../common/widgets/hospital_item.dart';
+import '../app/data/models/hospital.dart';
+import '../app/resources.dart';
+import '../app/routes.dart';
+import '../app/widgets/hospital_item.dart';
 
 class HomePopularHospitals extends StatelessWidget {
   final VoidCallback goToSearch;

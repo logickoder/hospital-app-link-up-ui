@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'common/routes.dart';
+import 'app/routes.dart';
 
 void main() => runApp(const MyApp());
 

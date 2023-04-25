@@ -30,9 +30,6 @@ class DashboardScreen extends ConsumerWidget {
           Container(
             color: Colors.green,
           ),
-          Container(
-            color: Colors.black,
-          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -52,10 +49,6 @@ class DashboardScreen extends ConsumerWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.email_outlined),
             label: 'Chat',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_2_outlined),
-            label: 'Profile',
           ),
         ],
         currentIndex: index,
