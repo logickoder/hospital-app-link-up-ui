@@ -61,7 +61,7 @@ class ChatListItem extends StatelessWidget {
             if (chat.unread > 0) ...{
               const SizedBox(height: AppPadding.small),
               Container(
-                padding: const EdgeInsets.all(AppPadding.small / 2),
+                padding: const EdgeInsets.all(AppPadding.small),
                 decoration: BoxDecoration(
                   color: theme.colorScheme.primary,
                   shape: BoxShape.circle,

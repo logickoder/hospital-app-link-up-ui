@@ -26,7 +26,10 @@ class ChatListScreen extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.all(AppPadding.normal),
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppPadding.normal,
+                vertical: AppPadding.medium,
+              ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -40,6 +43,7 @@ class ChatListScreen extends StatelessWidget {
               ),
             ),
           ),
+          const SliverToBoxAdapter(child: Divider(thickness: 0.5)),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (_, index) {
@@ -52,6 +56,40 @@ class ChatListScreen extends StatelessWidget {
                 );
               },
               childCount: testChats.length,
+            ),
+          ),
+          const SliverToBoxAdapter(child: Divider(thickness: 0.5)),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: AppPadding.extraLarge,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(Icons.lock_outline),
+                  const SizedBox(width: AppPadding.medium),
+                  FittedBox(
+                    child: RichText(
+                      text: TextSpan(
+                        text: 'Your personal messages are',
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                              color: const Color(0xFF626671),
+                            ),
+                        children: [
+                          const TextSpan(text: ' '),
+                          TextSpan(
+                            text: 'end-to-end encrypted',
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.primary,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           )
         ],
