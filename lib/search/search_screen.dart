@@ -5,6 +5,7 @@ import '../app/resources.dart';
 import '../app/routes.dart';
 import '../app/widgets/hospital_item.dart';
 import '../app/widgets/search.dart';
+import '../app/widgets/top_bar.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -12,30 +13,19 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const TopBar(title: 'HOSPITALS FOR YOU'),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: AppPadding.normal),
           child: CustomScrollView(
             physics: const BouncingScrollPhysics(),
             slivers: [
-              const SliverToBoxAdapter(
-                child: SizedBox(height: AppPadding.medium),
-              ),
               SliverToBoxAdapter(
-                child: Center(
-                  child: Text(
-                    'HOSPITALS FOR YOU',
-                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          fontWeight: FontWeight.w500,
-                          fontFamily: AppFonts.titleFamily,
-                    ),
-                  ),
-                ),
-              ),
-              const SliverToBoxAdapter(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: AppPadding.large),
-                  child: Search(hint: 'Search hospitals'),
+                child: Column(
+                  children: const [
+                    Search(hint: 'Search hospitals'),
+                    SizedBox(height: AppPadding.large),
+                  ],
                 ),
               ),
               SliverList(
