@@ -1,4 +1,4 @@
-name: hospital_link_up_ui
+name: hospital_app_link_up_ui
 description: A simple app to link up hospitals
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.

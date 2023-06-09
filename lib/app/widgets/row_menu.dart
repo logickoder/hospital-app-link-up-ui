@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../extensions.dart';
 import '../resources.dart';
-import '../utils/extensions.dart';
 
 class RowMenu extends ConsumerStatefulWidget {
   final String? initial;

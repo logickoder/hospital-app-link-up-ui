@@ -1,4 +1,4 @@
-# hospital_link_up_ui
+# hospital_app_link_up_ui
 
 A simple app to link-up hospitals
 

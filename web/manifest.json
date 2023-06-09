@@ -1,6 +1,6 @@
 {
-  "name": "hospital_link_up_ui",
-  "short_name": "hospital_link_up_ui",
+  "name": "hospital_app_link_up_ui",
+  "short_name": "hospital_app_link_up_ui",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0175C2",
