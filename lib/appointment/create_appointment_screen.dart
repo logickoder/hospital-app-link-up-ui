@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../app/resources.dart';
-import '../app/routes.dart';
 import '../app/widgets/button.dart';
 import '../app/widgets/input.dart';
 import '../app/widgets/top_bar.dart';
@@ -24,8 +23,8 @@ class CreateAppointmentScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     Expanded(
                       child: Input(
                         label: 'Select time',
@@ -60,8 +59,8 @@ class CreateAppointmentScreen extends StatelessWidget {
                   ),
                   child: Input(label: "Card Number"),
                 ),
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     Expanded(
                       child: Input(
                         label: 'Card Expiry Date',
@@ -78,10 +77,7 @@ class CreateAppointmentScreen extends StatelessWidget {
                   ),
                   child: Button(
                     text: 'Proceed',
-                    onClick: () => Navigator.pushNamed(
-                      context,
-                      AppRoutes.createAppointment,
-                    ),
+                    onClick: () => Navigator.pop(context),
                   ),
                 ),
                 SizedBox(

@@ -20,9 +20,9 @@ class SearchScreen extends StatelessWidget {
           child: CustomScrollView(
             physics: const BouncingScrollPhysics(),
             slivers: [
-              SliverToBoxAdapter(
+              const SliverToBoxAdapter(
                 child: Column(
-                  children: const [
+                  children: [
                     Search(hint: 'Search hospitals'),
                     SizedBox(height: AppPadding.large),
                   ],
